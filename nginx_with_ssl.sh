@@ -1,8 +1,18 @@
 #!/bin/bash
 
-export DOMAIN="CHANGEME"
+set -e
 
-set -ex
+# export DOMAIN
+if [[ ! -v DOMAIN ]]; then
+    echo "DOMAIN is not set"
+    exit -1
+elif [[ -z "$DOMAIN" ]]; then
+    echo "DOMAIN is set to the empty string"
+    exit -1
+else
+    echo "DOMAIN has the value: $DOMAIN"
+fi
+
 
 apt-get update
 apt-get upgrade -y

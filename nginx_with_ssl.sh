@@ -2,7 +2,8 @@
 
 set -e
 
-# export DOMAIN
+export DOMAIN=$DOMAIN
+
 if [[ ! -v DOMAIN ]]; then
     echo "DOMAIN is not set"
     exit -1
@@ -48,7 +49,7 @@ server {
 
 	location / {
         autoindex off;
-		try_files $uri $uri/ =404;
+        try_files $uri $uri/ =403;
 	}
 }
 EOF

@@ -2,7 +2,7 @@
 
 set -e
 
-export DOMAIN=$DOMAIN
+export DOMAIN=$1
 
 if [[ ! -v DOMAIN ]]; then
     echo "DOMAIN is not set"

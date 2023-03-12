@@ -47,7 +47,8 @@ server {
 	server_name $DOMAIN www.$DOMAIN;
 
 	location / {
-			try_files $uri $uri/ =404;
+        autoindex off;
+		try_files $uri $uri/ =404;
 	}
 }
 EOF

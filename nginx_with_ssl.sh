@@ -24,7 +24,7 @@ ufw default allow outgoing
 ufw allow ssh
 ufw allow 'Nginx Full'
 ufw enable
-ufw app status 
+ufw status
 
 snap install core
 snap refresh core 

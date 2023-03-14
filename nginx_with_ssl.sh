@@ -49,7 +49,7 @@ server {
 
 	location / {
         autoindex off;
-        try_files $uri $uri/ =403;
+        try_files \$uri \$uri/ =403;
 	}
 }
 EOF
@@ -64,6 +64,3 @@ systemctl restart nginx
 certbot --nginx -d $DOMAIN -d www.$DOMAIN
 systemctl status snap.certbot.renew.service  
 certbot renew --dry-run
-
-# quick fix certbot nginx config
-sed -i 's/try_files  \/ =403;/try_files \$uri \$uri\/ =403;/g' /etc/nginx/sites-enabled/$DOMAIN

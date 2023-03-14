@@ -31,7 +31,7 @@ snap install core
 snap refresh core 
 apt-get remove certbot
 snap install --classic certbot
-ln -s /snap/bin/certbot /usr/bin/certbot
+ln -s /snap/bin/certbot /usr/bin/certbot || true
 
 mkdir -p /var/www/$DOMAIN/html
 chown -R $USER:$USER /var/www/$DOMAIN/html

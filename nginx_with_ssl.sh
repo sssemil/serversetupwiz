@@ -64,3 +64,5 @@ systemctl restart nginx
 certbot --nginx -d $DOMAIN -d www.$DOMAIN
 systemctl status snap.certbot.renew.service  
 certbot renew --dry-run
+
+hostnamectl set-hostname $DOMAIN

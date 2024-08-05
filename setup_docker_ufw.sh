@@ -31,6 +31,8 @@ fi
 usermod -aG docker $SUDO_USER
 
 # Set UFW rules
+ufw default deny incoming
+ufw default allow outgoing
 ufw allow 22/tcp
 ufw allow 2376/tcp
 ufw allow 2377/tcp
